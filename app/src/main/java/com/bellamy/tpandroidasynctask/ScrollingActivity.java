@@ -27,65 +27,6 @@ public class ScrollingActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        // Définition du reset
-        /*findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
-        @Override
-            public void onClick(View view) {
-                // Initialisation des progressBar
-                ((ProgressBar) view.getRootView().findViewById(R.id.progressBar2)).setProgress(0);
-                ((ProgressBar) view.getRootView().findViewById(R.id.progressBar)).setProgress(0);
-                ((ImageView) view.getRootView().findViewById(R.id.extanded_imageview)).setImageBitmap(null);
-            }
-         });*/
-
-        // Définition du modul simulant une longue opération
-        /*findViewById(R.id.lauch_extanded_operation).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ExtandedOperation ext = new ExtandedOperation(ScrollingActivity.this, ((ProgressBar)findViewById(R.id.progressBar)));
-                ext.execute();
-            }
-        });*/
-
-        // Définition du chargement de l'image
-        /*findViewById(R.id.load_extanded_image).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    LoadExtandedImage imageLoader = new LoadExtandedImage();
-                    imageLoader.execute(new URL("https://i.ytimg.com/vi/1UvEZPA_YzY/maxresdefault.jpg"));
-
-                    Bitmap img = imageLoader.get();
-
-                    ((ImageView) view.getRootView().findViewById(R.id.extanded_imageview)).setImageBitmap(img);
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }
-            }
-        });*/
-
-        // Définition du module pour multiplier des nombre entre eux
-        /*findViewById(R.id.lauch_multiplier).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Multiplier multiplier = new Multiplier(ScrollingActivity.this, ((ProgressBar) findViewById(R.id.progressBar2)));
-
-                String [] listNumber = (((TextView) view.getRootView().findViewById(R.id.list_number)).getText()+"").split(" ");
-
-                Integer [] listNumberInt = new Integer[listNumber.length];
-                for (int i = 0; i < listNumber.length; i++) {
-                    for (int j=0; j < 100000; j++){}
-                    listNumberInt[i] = Integer.parseInt(listNumber[i]);
-                }
-
-                multiplier.execute(listNumberInt);
-            }
-        });*/
     }
 
     @Override
