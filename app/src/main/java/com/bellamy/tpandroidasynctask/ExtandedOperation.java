@@ -9,7 +9,7 @@ import android.widget.Toast;
  * Created by bellamy on 12/10/17.
  */
 
-public class ExtandedOperation extends AsyncTask<Void, Integer, Void> {
+public class ExtandedOperation extends AsyncTask<Integer, Integer, Void> {
     private Context applicationContext;
     private ProgressBar progressBar;
 
@@ -33,13 +33,13 @@ public class ExtandedOperation extends AsyncTask<Void, Integer, Void> {
     }
 
     @Override
-    protected Void doInBackground(Void... arg0) {
+    protected Void doInBackground(Integer... arg0) {
         int progress;
 
-        for (progress=0;progress<=100;progress++)
-        {
-            for (int i=0; i < 1000000; i++){}
-            //la méthode publishProgress met à jour l'interface en invoquant la méthode onProgressUpdate
+        for (progress=0; progress <= 100; progress++){
+            for (int i=0; i < 10000000; i++){}
+
+            // La méthode publishProgress met à jour l'interface en invoquant la méthode onProgressUpdate
             publishProgress(progress);
             progress++;
         }
