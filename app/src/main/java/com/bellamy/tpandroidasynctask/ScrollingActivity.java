@@ -28,7 +28,7 @@ public class ScrollingActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         // Définition du reset
-        findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+        /*findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
         @Override
             public void onClick(View view) {
                 // Initialisation des progressBar
@@ -36,19 +36,19 @@ public class ScrollingActivity extends AppCompatActivity {
                 ((ProgressBar) view.getRootView().findViewById(R.id.progressBar)).setProgress(0);
                 ((ImageView) view.getRootView().findViewById(R.id.extanded_imageview)).setImageBitmap(null);
             }
-         });
+         });*/
 
         // Définition du modul simulant une longue opération
-        findViewById(R.id.lauch_extanded_operation).setOnClickListener(new View.OnClickListener() {
+        /*findViewById(R.id.lauch_extanded_operation).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ExtandedOperation ext = new ExtandedOperation(ScrollingActivity.this, ((ProgressBar)findViewById(R.id.progressBar)));
                 ext.execute();
             }
-        });
+        });*/
 
         // Définition du chargement de l'image
-        findViewById(R.id.load_extanded_image).setOnClickListener(new View.OnClickListener() {
+        /*findViewById(R.id.load_extanded_image).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
@@ -67,10 +67,10 @@ public class ScrollingActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        });
+        });*/
 
         // Définition du module pour multiplier des nombre entre eux
-        findViewById(R.id.lauch_multiplier).setOnClickListener(new View.OnClickListener() {
+        /*findViewById(R.id.lauch_multiplier).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Multiplier multiplier = new Multiplier(ScrollingActivity.this, ((ProgressBar) findViewById(R.id.progressBar2)));
@@ -85,7 +85,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
                 multiplier.execute(listNumberInt);
             }
-        });
+        });*/
     }
 
     @Override
