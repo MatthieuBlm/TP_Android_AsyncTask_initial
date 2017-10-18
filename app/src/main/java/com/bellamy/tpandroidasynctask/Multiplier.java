@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-public class Multiplier extends AsyncTask<Integer, Integer, Integer> {
+public class Multiplier extends AsyncTask<Integer, Integer, Long> {
     private Context applicationContext;
     private ProgressBar progressBar;
 
@@ -15,11 +15,12 @@ public class Multiplier extends AsyncTask<Integer, Integer, Integer> {
     }
 
     @Override
-    protected Integer doInBackground(Integer... integers) {
-        Integer res = 1;
+    protected Long doInBackground(Integer... integers) {
+        Long res = new Long(1);
 
         for (int i = 0; i < integers.length; i++) {
-            res *= integers[i];
+            res = res * integers[i];
+            for (int j = 0; j < 10000000; j++){}
             publishProgress((int) ((i / (float) integers.length) * 100));
         }
 
@@ -36,7 +37,7 @@ public class Multiplier extends AsyncTask<Integer, Integer, Integer> {
     }
 
     @Override
-    protected void onPostExecute(Integer result) {
+    protected void onPostExecute(Long result) {
         Toast.makeText(applicationContext, "Résultat : " + result, Toast.LENGTH_LONG).show();
     }
 }

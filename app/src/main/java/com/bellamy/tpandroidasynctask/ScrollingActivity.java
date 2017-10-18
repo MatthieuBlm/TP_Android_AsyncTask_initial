@@ -27,8 +27,19 @@ public class ScrollingActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Button lauchExtandedOperation = (Button) findViewById(R.id.lauch_extanded_operation);
-        lauchExtandedOperation.setOnClickListener(new View.OnClickListener() {
+        // Définition du reset
+        findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
+        @Override
+            public void onClick(View view) {
+                // Initialisation des progressBar
+                ((ProgressBar) view.getRootView().findViewById(R.id.progressBar2)).setProgress(0);
+                ((ProgressBar) view.getRootView().findViewById(R.id.progressBar)).setProgress(0);
+                ((ImageView) view.getRootView().findViewById(R.id.extanded_imageview)).setImageBitmap(null);
+            }
+         });
+
+        // Définition du modul simulant une longue opération
+        findViewById(R.id.lauch_extanded_operation).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ExtandedOperation ext = new ExtandedOperation(ScrollingActivity.this, ((ProgressBar)findViewById(R.id.progressBar)));
@@ -36,8 +47,8 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
-//        ImageView extandedImageView = (ImageView) findViewById(R.id.extanded_imageview);
-/*        ((Button) findViewById(R.id.load_extanded_image)).setOnClickListener(new View.OnClickListener() {
+        // Définition du chargement de l'image
+        findViewById(R.id.load_extanded_image).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
@@ -56,8 +67,9 @@ public class ScrollingActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        }); */
+        });
 
+        // Définition du module pour multiplier des nombre entre eux
         findViewById(R.id.lauch_multiplier).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,19 +90,14 @@ public class ScrollingActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_scrolling, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }

@@ -66,6 +66,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="Multiplier des entier entre eux :" />
 
         <EditText
@@ -88,10 +89,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <!--<Button
+        <Button
             android:id="@+id/load_extanded_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="Charger l'image" />
 
         <ImageView
@@ -100,13 +102,12 @@
             android:layout_height="wrap_content"
             app:srcCompat="@mipmap/ic_launcher" />
 
-
-
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_margin="@dimen/text_margin"
-                   android:text="@string/large_text" /> -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@string/large_text" />
 
 
 
